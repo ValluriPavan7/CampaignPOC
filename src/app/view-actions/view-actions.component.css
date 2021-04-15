@@ -1,0 +1,11 @@
+.ActionDiv{
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+    margin-top: 1%;
+  }
+
+  .smallimg{
+    height: 25px;
+    width: 25px;
+  }
