@@ -21,7 +21,7 @@ export class CampaignService {
     }
        
     getCampaigns(){
-      return this.http.get<Campaign[]>("../assets/campaign-data.json").pipe(
+      return this.http.get<Campaign[]>("./assets/campaign-data.json").pipe(
         map(campaigns => {
           this.currentCampaignSource.next(campaigns);
           return campaigns;
