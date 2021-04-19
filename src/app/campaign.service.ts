@@ -17,7 +17,6 @@ export class CampaignService {
   displayedColumns: string[] = ['campaignDate', 'name', 'price', 'csv'];
 
     constructor(private http : HttpClient) {
-      console.log(this.campaigns);
       this.getCampaigns().subscribe();
     }
        
@@ -26,6 +25,8 @@ export class CampaignService {
         map(campaigns => {
           this.currentCampaignSource.next(campaigns);
           return campaigns;
+        },(error) =>{
+          console.log(error);
         })
       );    
   }
@@ -39,7 +40,6 @@ export class CampaignService {
     let index = this.campaigns.indexOf(Campaign);
     this.campaigns[index] = Campaign;
     this.currentCampaignSource.next(this.campaigns);
-    console.log(this.campaigns);
   }
 
   getTodaysDate(){
