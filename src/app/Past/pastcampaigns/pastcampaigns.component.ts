@@ -28,7 +28,7 @@ export class PastcampaignsComponent implements OnInit {
       let today = this.CampaignService.getTodaysDate();
       let pastData  = data.filter(
         event => this.CampaignService.getDateFromString(event.campaignDate) < today);
-        console.log(pastData);
+        
         this.dataSource.data = pastData.sort((a, b)=>{
           let condition = (new Date(a.campaignDate) < new Date(b.campaignDate))
           return condition ? 1 : -1;
